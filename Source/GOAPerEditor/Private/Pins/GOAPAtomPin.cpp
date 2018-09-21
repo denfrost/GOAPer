@@ -6,7 +6,7 @@
 #include "EdGraph/EdGraphSchema.h"
 #include "GOAPAtom.h"
 
-// check bug here later~!
+
 void SGOAPAtomPin::Construct(const FArguments& InArgs, UEdGraphPin* InGraphPinObj)
 {
 
@@ -38,6 +38,7 @@ TSharedRef<SWidget>	SGOAPAtomPin::GetDefaultValueWidget()
 		Key = 0;
 	}
 
+	// check bug here later~! If Null options appear Crash hot fix.
 	//Creating the button that adds a new item on the list when pressed
 	return SNew(SHorizontalBox)
 		+ SHorizontalBox::Slot()
