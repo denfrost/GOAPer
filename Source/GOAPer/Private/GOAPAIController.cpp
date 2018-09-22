@@ -153,6 +153,7 @@ void AGOAPAIController::SetMoveToStateWithTarget(AActor* aTargetActor, const flo
 		);
 
 	GetCharacter()->GetCharacterMovement()->MaxWalkSpeed = WalkSpeed;
+	// crash on redesign access violation need to fix
 	MoveToActor(aTargetActor, aAcceptanceRadius);
 	MoveToTargetActor = aTargetActor;
 	_IsMoveCompleted = false;
