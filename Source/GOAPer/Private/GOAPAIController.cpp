@@ -152,8 +152,7 @@ void AGOAPAIController::SetMoveToStateWithTarget(AActor* aTargetActor, const flo
 		12.333
 		);
 
-	GetCharacter()->GetCharacterMovement()->MaxWalkSpeed = WalkSpeed;
-	// crash on redesign access violation need to fix
+	//GetCharacter()->GetCharacterMovement()->MaxWalkSpeed = WalkSpeed; //only for Characters
 	MoveToActor(aTargetActor, aAcceptanceRadius);
 	MoveToTargetActor = aTargetActor;
 	_IsMoveCompleted = false;
@@ -170,8 +169,8 @@ void AGOAPAIController::SetMoveToStateWithLocation(const FVector aLocation, cons
 		12.333
 		);
 	// Set to self to avoid failing null checks
-	MoveToTargetActor = GetCharacter();
-	GetCharacter()->GetCharacterMovement()->MaxWalkSpeed = WalkSpeed;	
+	MoveToTargetActor = GetPawn(); //GetCharacter();
+	//GetCharacter()->GetCharacterMovement()->MaxWalkSpeed = WalkSpeed;	//only for Characters
 	MoveToLocation(aLocation, -1.0f);
 	_IsMoveCompleted = false;
 }
